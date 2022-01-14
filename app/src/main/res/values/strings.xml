@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Recepier</string>
+
+    <string name="ad_mob_app_id" translatable="false">ca-app-pub-7299881835579073~6502859861</string>
 </resources>
