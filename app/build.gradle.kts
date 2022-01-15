@@ -1,19 +1,19 @@
 plugins {
-    id("com.android.application")
-    id("kotlin-android")
-    id("kotlin-kapt")
-    id("dagger.hilt.android.plugin")
+    id(Plugins.androidApplication)
+    id(Plugins.kotlinAndroid)
+    id(Plugins.kotlinKapt)
+    id(Plugins.hiltAndroid)
 }
 
 android {
-    compileSdk = 31
+    compileSdk = AndroidConfig.compileSdk
 
     defaultConfig {
-        applicationId = "com.sixoutoften.recepier"
-        minSdk = 23
-        targetSdk = 31
-        versionCode = 1
-        versionName ="1.0"
+        applicationId = AndroidConfig.applicationId
+        minSdk = AndroidConfig.minSdk
+        targetSdk = AndroidConfig.targetSdk
+        versionCode = AndroidConfig.versionCode
+        versionName = AndroidConfig.versionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -39,44 +39,39 @@ android {
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.7.0")
-    implementation("androidx.appcompat:appcompat:1.4.0")
+    implementation(Libs.coreKtx)
+    implementation(Libs.appCompat)
+
+    // Kotlin
+    KotlinX.coroutines.android
+    implementation(kotlin("bom"))
+    implementation(kotlin(Libs.kotlinStdlib))
 
     // UI
-    implementation("com.google.android.material:material:1.4.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.2")
+    implementation(Libs.material)
+    implementation(Libs.constraintLayout)
 
     // Firebase
-    implementation(enforcedPlatform("com.google.firebase:firebase-bom:29.0.3"))
-    implementation("com.google.firebase:firebase-analytics-ktx")
-    implementation("com.google.android.gms:play-services-ads:20.5.0")
-
+    implementation(enforcedPlatform(Libs.firebaseBom))
+    implementation(Libs.firebaseAnalyticsKtx)
+    implementation(Libs.playServicesAds)
 
     // DI
-    val hiltVersion = "2.38.1"
-    implementation("com.google.dagger:hilt-android:$hiltVersion")
-    kapt("com.google.dagger:hilt-compiler:$hiltVersion")
+    implementation(Libs.hiltAndroid)
+    kapt(Libs.hiltCompiler)
 
     //Arch components
-    implementation("androidx.work:work-runtime-ktx:2.7.1")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0")
+    implementation(Libs.workRuntimeKtx)
+    implementation(Libs.kotlinxCoroutinesAndroid)
+    implementation(Libs.lifecycleViewModelKtx)
+    implementation(Libs.lifecycleLivedataKtx)
+    implementation(Libs.lifecycleViewModelSavedState)
+    implementation(Libs.roomRuntime)
+    kapt(Libs.roomCompiler)
 
-    val lifecycleVersion = "2.4.0"
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion")
-
-    // Saved state module for ViewModel
-    implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycleVersion")
-
-    //Room
-    val roomVersion = "2.4.1"
-    implementation("androidx.room:room-runtime:$roomVersion")
-    kapt("androidx.room:room-compiler:$roomVersion")
-
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0")
+    implementation(Libs.glide)
+    kapt(Libs.glideCompiler)
 
     // Test
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.3")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
+    testImplementation(Libs.junit)
 }
