@@ -15,6 +15,8 @@ object Libs {
 
     const val coreKtx: String = "androidx.core:core-ktx:_"
 
+    const val fragmentKtx: String = "androidx.fragment:fragment-ktx:_"
+
     const val lifecycleLivedataKtx: String =
         "androidx.lifecycle:lifecycle-livedata-ktx:_"
     const val lifecycleViewModelKtx: String =
@@ -44,4 +46,7 @@ object Libs {
 
     const val glide: String = "com.github.bumptech.glide:glide:_"
     const val glideCompiler: String = "com.github.bumptech.glide:compiler:_"
+
+    const val timber: String = "com.jakewharton.timber:timber:_"
+    const val logger: String = "com.orhanobut:logger:_"
 }

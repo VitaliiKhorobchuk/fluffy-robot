@@ -42,6 +42,9 @@ dependencies {
     implementation(Libs.coreKtx)
     implementation(Libs.appCompat)
 
+    //Ktx extensions
+    implementation(Libs.fragmentKtx)
+
     // Kotlin
     KotlinX.coroutines.android
     implementation(kotlin("bom"))
@@ -60,7 +63,7 @@ dependencies {
     implementation(Libs.hiltAndroid)
     kapt(Libs.hiltCompiler)
 
-    //Arch components
+    // Arch components
     implementation(Libs.workRuntimeKtx)
     implementation(Libs.kotlinxCoroutinesAndroid)
     implementation(Libs.lifecycleViewModelKtx)
@@ -72,6 +75,13 @@ dependencies {
     implementation(Libs.glide)
     kapt(Libs.glideCompiler)
 
+    implementation(Libs.timber)
+    implementation(Libs.logger)
+
     // Test
     testImplementation(Libs.junit)
+}
+
+hilt {
+    enableAggregatingTask = true
 }
