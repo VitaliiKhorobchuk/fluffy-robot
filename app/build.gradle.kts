@@ -46,7 +46,6 @@ dependencies {
     implementation(Libs.fragmentKtx)
 
     // Kotlin
-    KotlinX.coroutines.android
     implementation(kotlin("bom"))
     implementation(kotlin(Libs.kotlinStdlib))
 
@@ -65,18 +64,27 @@ dependencies {
 
     // Arch components
     implementation(Libs.workRuntimeKtx)
-    implementation(Libs.kotlinxCoroutinesAndroid)
     implementation(Libs.lifecycleViewModelKtx)
     implementation(Libs.lifecycleLivedataKtx)
     implementation(Libs.lifecycleViewModelSavedState)
+
+    // Room
     implementation(Libs.roomRuntime)
+    implementation(Libs.roomKtx)
     kapt(Libs.roomCompiler)
 
+    // Coroutines
+    implementation(Libs.kotlinxCoroutinesAndroid)
+    implementation(Libs.kotlinxCoroutinesCore)
+
+    // Glide
     implementation(Libs.glide)
     kapt(Libs.glideCompiler)
 
+    // Utils
     implementation(Libs.timber)
     implementation(Libs.logger)
+    implementation(Libs.gson)
 
     // Test
     testImplementation(Libs.junit)

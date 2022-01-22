@@ -26,6 +26,7 @@ object Libs {
 
     const val roomRuntime: String = "androidx.room:room-runtime:_"
     const val roomCompiler: String = "androidx.room:room-compiler:_"
+    const val roomKtx: String = "androidx.room:room-ktx:_"
 
     const val workRuntimeKtx: String = "androidx.work:work-runtime-ktx:_"
 
@@ -39,6 +40,8 @@ object Libs {
 
     const val kotlinxCoroutinesAndroid: String =
         "org.jetbrains.kotlinx:kotlinx-coroutines-android:_"
+    const val kotlinxCoroutinesCore: String =
+        "org.jetbrains.kotlinx:kotlinx-coroutines-core:_"
 
     const val kotlinStdlib: String = "stdlib-jdk8"
 
@@ -49,4 +52,6 @@ object Libs {
 
     const val timber: String = "com.jakewharton.timber:timber:_"
     const val logger: String = "com.orhanobut:logger:_"
+
+    const val gson: String = "com.google.code.gson:gson:_"
 }
