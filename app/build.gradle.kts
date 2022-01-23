@@ -73,10 +73,6 @@ dependencies {
     implementation(Libs.lifecycleLivedataKtx)
     implementation(Libs.lifecycleViewModelSavedState)
 
-    // Room
-    implementation(Libs.roomRuntime)
-    implementation(Libs.roomKtx)
-
     // Coroutines
     implementation(Libs.kotlinxCoroutinesAndroid)
     implementation(Libs.kotlinxCoroutinesCore)

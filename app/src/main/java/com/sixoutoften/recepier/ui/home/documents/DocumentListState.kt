@@ -7,4 +7,12 @@ class DocumentListState(
     val documents: List<Document>? = listOf(),
     isLoading: Boolean = false,
     error: Error? = null
-) : UiState(isLoading, error)
+) : UiState(isLoading, error) {
+
+    override fun toString(): String {
+        return "DocumentListState { " +
+                "\n documents: $documents" +
+                "\n" + super.toString() +
+                "\n }"
+    }
+}

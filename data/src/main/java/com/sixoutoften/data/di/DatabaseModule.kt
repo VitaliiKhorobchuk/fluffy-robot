@@ -1,4 +1,4 @@
-package com.sixoutoften.recepier.di
+package com.sixoutoften.data.di
 
 import android.content.Context
 import androidx.room.Room
@@ -17,7 +17,6 @@ class DatabaseModule {
 
     @Provides
     fun provideAppDatabase(@ApplicationContext appContext: Context): RecepierDB {
-//        return RecepierDB.build(appContext)
         return Room.databaseBuilder(
             appContext,
             RecepierDB::class.java,

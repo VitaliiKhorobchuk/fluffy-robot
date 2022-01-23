@@ -1,4 +1,4 @@
-package com.sixoutoften.recepier.di
+package com.sixoutoften.data.di
 
 import com.sixoutoften.data.repository.DocumentRepositoryImpl
 import com.sixoutoften.domain.repository.DocumentRepository
