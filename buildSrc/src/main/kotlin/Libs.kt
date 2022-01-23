@@ -32,6 +32,8 @@ object Libs {
 
     const val hiltAndroid: String = "com.google.dagger:hilt-android:_"
     const val hiltCompiler: String = "com.google.dagger:hilt-compiler:_"
+    const val hiltViewModel: String = "androidx.hilt:hilt-lifecycle-viewmodel:_"
+    const val hiltViewModelCompiler: String = "androidx.hilt:hilt-compiler:_"
 
     const val firebaseBom: String = "com.google.firebase:firebase-bom:_"
     const val firebaseAnalyticsKtx: String = "com.google.firebase:firebase-analytics-ktx"

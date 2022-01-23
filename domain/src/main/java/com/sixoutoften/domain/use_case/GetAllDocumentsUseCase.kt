@@ -1,8 +1,8 @@
-package com.sixoutoften.recepier.temp.domain.use_case
+package com.sixoutoften.domain.use_case
 
-import com.sixoutoften.recepier.temp.domain.model.Document
-import com.sixoutoften.recepier.temp.domain.repository.DocumentRepository
-import com.sixoutoften.recepier.util.Result
+import com.sixoutoften.domain.common.Result
+import com.sixoutoften.domain.model.Document
+import com.sixoutoften.domain.repository.DocumentRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject

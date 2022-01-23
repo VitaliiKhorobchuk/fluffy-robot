@@ -1,7 +1,7 @@
-package com.sixoutoften.recepier.temp.data.db.document
+package com.sixoutoften.data.db.document
 
 import androidx.room.Entity
-import com.sixoutoften.recepier.temp.domain.model.Document
+import com.sixoutoften.domain.model.Document
 
 @Entity(tableName = "document", primaryKeys = ["title", "createDate"])
 data class DocumentEntity(
@@ -11,6 +11,14 @@ data class DocumentEntity(
     val expireDate: Long,
     val tags: List<String>?
 ) {
+
+    constructor(document: Document) : this(
+        document.title,
+        document.description,
+        document.createDate,
+        document.expireDate,
+        document.tags
+    )
 
     fun toDocument(): Document {
         return Document(

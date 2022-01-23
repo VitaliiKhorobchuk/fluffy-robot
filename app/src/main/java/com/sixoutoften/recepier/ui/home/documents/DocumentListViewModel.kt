@@ -3,12 +3,11 @@ package com.sixoutoften.recepier.ui.home.documents
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.sixoutoften.domain.repository.DocumentRepository
+import com.sixoutoften.domain.use_case.GetAllDocumentsUseCase
 import com.sixoutoften.recepier.temp.analytics.AnalyticsService
-import com.sixoutoften.recepier.temp.domain.repository.DocumentRepository
-import com.sixoutoften.recepier.temp.domain.use_case.GetAllDocumentsUseCase
 import com.sixoutoften.recepier.ui.UiState
 import com.sixoutoften.recepier.util.RLogger
-import com.sixoutoften.recepier.util.Result
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -44,16 +43,16 @@ class DocumentListViewModel @Inject constructor(
         }
         getAllDocumentsUseCase().onEach {
             val res = when (it) {
-                is Result.Success -> {
+                is com.sixoutoften.domain.common.Result.Error -> {
                     it.data
                     _stateFlow.value = DocumentListState(it.data)
                     "success ${it.data}"
                 }
-                is Result.Loading -> {
+                is com.sixoutoften.domain.common.Result.Loading -> {
                     _stateFlow.value = DocumentListState(isLoading = true)
                     "loading"
                 }
-                is Result.Error -> {
+                is com.sixoutoften.domain.common.Result.Success -> {
                     _stateFlow.value = DocumentListState(error = UiState.Error.GeneralError)
                     "error"
                 }

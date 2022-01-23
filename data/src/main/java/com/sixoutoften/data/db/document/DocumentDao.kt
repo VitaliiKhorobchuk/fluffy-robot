@@ -1,4 +1,4 @@
-package com.sixoutoften.recepier.temp.data.db.document
+package com.sixoutoften.data.db.document
 
 import androidx.room.Dao
 import androidx.room.Insert

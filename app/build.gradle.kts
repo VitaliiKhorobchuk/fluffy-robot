@@ -39,6 +39,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":domain"))
+    implementation(project(":data"))
 
     implementation(Libs.coreKtx)
     implementation(Libs.appCompat)
@@ -61,7 +63,9 @@ dependencies {
 
     // DI
     implementation(Libs.hiltAndroid)
+    implementation(Libs.hiltViewModel)
     kapt(Libs.hiltCompiler)
+    kapt(Libs.hiltViewModelCompiler)
 
     // Arch components
     implementation(Libs.workRuntimeKtx)
@@ -72,7 +76,6 @@ dependencies {
     // Room
     implementation(Libs.roomRuntime)
     implementation(Libs.roomKtx)
-    kapt(Libs.roomCompiler)
 
     // Coroutines
     implementation(Libs.kotlinxCoroutinesAndroid)
@@ -85,7 +88,6 @@ dependencies {
     // Utils
     implementation(Libs.timber)
     implementation(Libs.logger)
-    implementation(Libs.gson)
 
     // Test
     testImplementation(Libs.junit)

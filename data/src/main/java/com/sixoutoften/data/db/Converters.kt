@@ -1,4 +1,4 @@
-package com.sixoutoften.recepier.temp.data.db
+package com.sixoutoften.data.db
 
 import androidx.room.TypeConverter
 import com.google.gson.Gson
