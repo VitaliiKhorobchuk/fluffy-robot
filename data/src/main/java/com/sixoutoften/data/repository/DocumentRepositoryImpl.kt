@@ -3,7 +3,7 @@ package com.sixoutoften.data.repository
 import android.database.sqlite.SQLiteException
 import com.sixoutoften.data.db.document.DocumentDao
 import com.sixoutoften.data.db.document.DocumentEntity
-import com.sixoutoften.domain.common.Result
+import com.sixoutoften.domain.common.RResult
 import com.sixoutoften.domain.common.SimpleResult
 import com.sixoutoften.domain.model.Document
 import com.sixoutoften.domain.model.DocumentListItem
@@ -17,10 +17,10 @@ class DocumentRepositoryImpl @Inject constructor(
     override suspend fun save(document: Document): SimpleResult {
         return try {
             documentDao.insert(DocumentEntity(document))
-            Result.Success(null)
+            RResult.Success(null)
         } catch (e: SQLiteException) {
             // TODO: 22.01.2022 record crash
-            Result.Error(e)
+            RResult.Error(e)
         }
     }
 
@@ -29,29 +29,29 @@ class DocumentRepositoryImpl @Inject constructor(
             documentDao.insertAll(
                 documents.map { DocumentEntity(it) }
             )
-            Result.Success(null)
+            RResult.Success(null)
         } catch (e: SQLiteException) {
             // TODO: 22.01.2022 record crash
-            Result.Error(e)
+            RResult.Error(e)
         }
     }
 
-    override suspend fun getAll(): Result<List<Document>> {
+    override suspend fun getAll(): RResult<List<Document>> {
         return try {
-            Result.Success(documentDao.getAll().map { it.toDocument() })
+            RResult.Success(documentDao.getAll().map { it.toDocument() })
         } catch (e: SQLiteException) {
             // TODO: 22.01.2022 record crash
-            Result.Error(e)
+            RResult.Error(e)
         }
     }
 
-    override suspend fun getAllForList(): Result<List<DocumentListItem>> {
+    override suspend fun getAllForList(): RResult<List<DocumentListItem>> {
         // TODO: 22.01.2022 real impl
         return try {
-            Result.Success(documentDao.getAllForList().map { it.toDocumentListItem() })
+            RResult.Success(documentDao.getAllForList().map { it.toDocumentListItem() })
         } catch (e: SQLiteException) {
             // TODO: 22.01.2022 record crash
-            Result.Error(e)
+            RResult.Error(e)
         }
     }
 }

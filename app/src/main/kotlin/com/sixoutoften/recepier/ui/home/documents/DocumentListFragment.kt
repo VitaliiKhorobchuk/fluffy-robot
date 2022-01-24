@@ -24,7 +24,7 @@ class DocumentListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val view = inflater.inflate(R.layout.fragment_documents, container, false)
+        val view = inflater.inflate(R.layout.fragment_document_list, container, false)
         tvMessage = view.findViewById(R.id.message)
         return view
     }

@@ -52,6 +52,9 @@ object Libs {
     const val glide: String = "com.github.bumptech.glide:glide:_"
     const val glideCompiler: String = "com.github.bumptech.glide:compiler:_"
 
+    const val navigationFragment: String = "androidx.navigation:navigation-fragment-ktx:_"
+    const val navigationUi: String = "androidx.navigation:navigation-ui-ktx:_"
+
     const val timber: String = "com.jakewharton.timber:timber:_"
     const val logger: String = "com.orhanobut:logger:_"
 

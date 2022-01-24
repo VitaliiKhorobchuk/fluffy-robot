@@ -3,6 +3,7 @@ package com.sixoutoften.recepier.ui.home.documents
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.sixoutoften.domain.common.RResult.*
 import com.sixoutoften.domain.repository.DocumentRepository
 import com.sixoutoften.domain.use_case.GetAllDocumentsUseCase
 import com.sixoutoften.recepier.temp.analytics.AnalyticsService
@@ -43,18 +44,17 @@ class DocumentListViewModel @Inject constructor(
         }
         getAllDocumentsUseCase().onEach {
             val res = when (it) {
-                is com.sixoutoften.domain.common.Result.Error -> {
-                    it.data
-                    _stateFlow.value = DocumentListState(it.data)
-                    "success ${it.data}"
+                is Error -> {
+                    _stateFlow.value = DocumentListState(error = UiState.Error.GeneralError)
+                    "error ${it.data}"
                 }
-                is com.sixoutoften.domain.common.Result.Loading -> {
+                is Loading -> {
                     _stateFlow.value = DocumentListState(isLoading = true)
                     "loading"
                 }
-                is com.sixoutoften.domain.common.Result.Success -> {
-                    _stateFlow.value = DocumentListState(error = UiState.Error.GeneralError)
-                    "error"
+                is Success -> {
+                    _stateFlow.value = DocumentListState(it.data)
+                    "success ${it.data}"
                 }
             }
             logger.d("get all $res")

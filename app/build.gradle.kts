@@ -3,6 +3,7 @@ plugins {
     id(Plugins.kotlinAndroid)
     id(Plugins.kotlinKapt)
     id(Plugins.hiltAndroid)
+    id(Plugins.navigationSafeArgs)
 }
 
 android {
@@ -70,8 +71,11 @@ dependencies {
     // Arch components
     implementation(Libs.workRuntimeKtx)
     implementation(Libs.lifecycleViewModelKtx)
-    implementation(Libs.lifecycleLivedataKtx)
     implementation(Libs.lifecycleViewModelSavedState)
+
+    // Navigation
+    implementation(Libs.navigationFragment)
+    implementation(Libs.navigationUi)
 
     // Coroutines
     implementation(Libs.kotlinxCoroutinesAndroid)

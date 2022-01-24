@@ -9,6 +9,6 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Recepier"
-include("app")
 include(":domain")
 include(":data")
+include(":app")
