@@ -8,5 +8,6 @@ buildscript {
         classpath(Android.tools.build.gradlePlugin)
         classpath(Dependencies.kotlin_gradle_plugin)
         classpath(Dependencies.hiltAndroidGradlePlugin)
+        classpath(Dependencies.navigationSafeArgs)
     }
 }
