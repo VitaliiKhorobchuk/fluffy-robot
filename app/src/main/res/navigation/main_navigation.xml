@@ -17,4 +17,14 @@
         android:name="com.sixoutoften.recepier.ui.home.settings.SettingsFragment"
         android:label="Settings Fragment"
         tools:layout="@layout/fragment_settings"/>
+
+    <action android:id="@+id/navigateToDocumentDetail"
+        app:destination="@+id/documentDetailActivity"/>
+
+    <activity
+        android:id="@+id/documentDetailActivity"
+        android:name="com.sixoutoften.recepier.ui.home.document_detail.DocumentDetailActivity"
+        android:label="activity_document_detail"
+        tools:layout="@layout/activity_document_detail" />
+
 </navigation>
