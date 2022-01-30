@@ -6,6 +6,7 @@
         <item name="colorSecondary">@color/colorSecondary</item>
         <item name="android:colorBackground">@color/colorBackground</item>
         <item name="colorError">@color/colorError</item>
+<!--        <item name="android:statusBarColor">@color/colorOnPrimaryContainer</item>-->
 
         <!-- MaterialComponents attributes (needed if parent="Theme.AppCompat"). -->
         <item name="colorSurface">@color/colorSurface</item>
@@ -33,5 +34,16 @@
         <item name="colorOnErrorContainer">@color/colorOnErrorContainer</item>
 
         <!-- Styles -->
+        <item name="textAppearanceTitleMedium">@style/TextAppearance.App.TitleLarge</item>
     </style>
+
+    <style name="TextAppearance.App.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.CornerSize20Percent" parent="">
+        <item name="cornerSize">20%</item>
+    </style>
+
 </resources>

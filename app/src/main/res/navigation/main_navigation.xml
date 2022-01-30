@@ -23,7 +23,7 @@
 
     <activity
         android:id="@+id/documentDetailActivity"
-        android:name="com.sixoutoften.recepier.ui.home.document_detail.DocumentDetailActivity"
+        android:name="com.sixoutoften.recepier.ui.document_detail.DocumentDetailActivity"
         android:label="activity_document_detail"
         tools:layout="@layout/activity_document_detail" />
 

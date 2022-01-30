@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.home.document_detail.DocumentDetailActivity"
+        <activity android:name="com.sixoutoften.recepier.ui.document_detail.DocumentDetailActivity"
             android:exported="true"/>
 
         <meta-data

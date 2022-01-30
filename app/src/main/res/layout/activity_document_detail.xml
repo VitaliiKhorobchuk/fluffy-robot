@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.home.document_detail.DocumentDetailActivity">
+    android:orientation="vertical"
+    tools:context=".ui.document_detail.DocumentDetailActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/tbDocumentDetail"
+        style="?attr/toolbarSurfaceStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/elevation_offset"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_back"
+        app:title="@string/document_detail_title"
+        app:titleCentered="true"
+        app:titleTextAppearance="?attr/textAppearanceTitleMedium" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fcvDocumentDetail"
@@ -12,10 +27,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbDocumentDetail"
         app:navGraph="@navigation/document_detail_navigation" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

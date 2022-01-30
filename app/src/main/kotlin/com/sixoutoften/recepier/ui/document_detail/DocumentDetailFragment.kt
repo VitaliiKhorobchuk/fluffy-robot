@@ -1,10 +1,11 @@
-package com.sixoutoften.recepier.ui.home.document_detail
+package com.sixoutoften.recepier.ui.document_detail
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.sixoutoften.recepier.databinding.FragmentDocumentDetailBinding
 import com.sixoutoften.recepier.util.RLogger
 import dagger.hilt.android.AndroidEntryPoint
@@ -24,7 +25,13 @@ class DocumentDetailFragment : Fragment() {
     ): View {
         binding = FragmentDocumentDetailBinding.inflate(inflater)
 
-        logger.d("test")
+        configureUi()
         return binding.root
+    }
+
+    private fun configureUi() {
+        binding.btnSave.setOnClickListener {
+            binding.tilTitle.error = "Error"
+        }
     }
 }
