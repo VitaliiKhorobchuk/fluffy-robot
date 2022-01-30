@@ -1,4 +1,4 @@
-plugins {
+    plugins {
     id(Plugins.androidApplication)
     id(Plugins.kotlinAndroid)
     id(Plugins.kotlinKapt)
@@ -37,11 +37,15 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
-    implementation(project(":domain"))
-    implementation(project(":data"))
+    implementation(project(Projects.domain))
+    implementation(project(Projects.data))
 
     implementation(Libs.coreKtx)
     implementation(Libs.appCompat)
