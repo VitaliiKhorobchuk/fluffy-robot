@@ -5,10 +5,10 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-//        classpath(Android.tools.build.gradlePlugin)
         classpath(Dependencies.gradle)
         classpath(Dependencies.kotlin_gradle_plugin)
         classpath(Dependencies.hiltAndroidGradlePlugin)
         classpath(Dependencies.navigationSafeArgs)
     }
 }
+
