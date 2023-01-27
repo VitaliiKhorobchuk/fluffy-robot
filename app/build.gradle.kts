@@ -73,7 +73,9 @@ dependencies {
 
     // DI
     implementation(Libs.hiltAndroid)
+    implementation(Libs.hiltViewModel)
     kapt(Libs.hiltCompiler)
+    kapt(Libs.hiltViewModelCompiler)
 
     // Arch components
     implementation(Libs.workRuntimeKtx)
