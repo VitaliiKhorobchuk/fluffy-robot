@@ -63,8 +63,8 @@ class DocumentDetailActivity : ComponentActivity() {
                 Text(text = "Simple compose")
                 Button(
                     onClick = {
-                        Toast.makeText(LocalContext.current, "Save", Toast.LENGTH_SHORT)
-                            .show()
+                        // Toast.makeText(LocalContext.current, "Save", Toast.LENGTH_SHORT)
+                        //     .show()
                     },
                     modifier = Modifier.fillMaxWidth()
                 ) {
