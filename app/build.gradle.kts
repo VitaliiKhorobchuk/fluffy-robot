@@ -40,6 +40,11 @@ android {
 
     buildFeatures {
         viewBinding = true
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.1.1"
     }
 }
 
@@ -68,9 +73,7 @@ dependencies {
 
     // DI
     implementation(Libs.hiltAndroid)
-    implementation(Libs.hiltViewModel)
     kapt(Libs.hiltCompiler)
-    kapt(Libs.hiltViewModelCompiler)
 
     // Arch components
     implementation(Libs.workRuntimeKtx)
@@ -92,6 +95,13 @@ dependencies {
     // Utils
     implementation(Libs.timber)
     implementation(Libs.logger)
+
+    // Compose
+    implementation(Libs.composeUi)
+    implementation(Libs.composeUiTooling)
+    implementation(Libs.composeActivity)
+    implementation(Libs.composeFoundation)
+    implementation(Libs.composeMaterial3)
 
     // Test
     testImplementation(Libs.junit)

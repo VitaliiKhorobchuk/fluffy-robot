@@ -59,4 +59,11 @@ object Libs {
     const val logger: String = "com.orhanobut:logger:_"
 
     const val gson: String = "com.google.code.gson:gson:_"
+
+    const val composeUi = "androidx.compose.ui:ui:_"
+    const val composeUiTooling = "androidx.compose.ui:ui-tooling:_"
+    const val composeFoundation = "androidx.compose.foundation:foundation:_"
+    const val composeMaterial = "androidx.compose.material:material:_"
+    const val composeMaterial3 = "androidx.compose.material3:material3:_"
+    const val composeActivity = "androidx.activity:activity-compose:_"
 }
