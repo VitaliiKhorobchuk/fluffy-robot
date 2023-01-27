@@ -41,7 +41,6 @@ android {
     buildFeatures {
         viewBinding = true
     }
-    namespace = "com.sixoutoften.recepier"
 }
 
 dependencies {

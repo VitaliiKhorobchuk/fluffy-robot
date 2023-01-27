@@ -38,7 +38,6 @@ android {
     android.sourceSets.all {
         kotlin.srcDir("src/$name/kotlin")
     }
-    namespace = "com.sixoutoften.domain"
 }
 
 dependencies {
