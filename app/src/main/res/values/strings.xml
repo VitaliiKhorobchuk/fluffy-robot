@@ -2,4 +2,13 @@
     <string name="app_name">Recepier</string>
 
     <string name="ad_mob_app_id" translatable="false">ca-app-pub-7299881835579073~6502859861</string>
+
+    <string name="navigation_documents_list">Documents</string>
+    <string name="navigation_settings">Settings</string>
+
+    <!-- Document detail -->
+    <string name="document_detail_title">New document</string>
+    <string name="document_detail_save">Save</string>
+    <string name="document_detail_title_hint">Title *</string>
+    <string name="document_detail_description_hint">Description</string>
 </resources>

@@ -1,5 +1,5 @@
 plugins {
-    id("de.fayard.refreshVersions") version "0.30.2"
+    id("de.fayard.refreshVersions") version "0.51.0"
 }
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
@@ -9,4 +9,6 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Recepier"
-include("app")
+include(":domain")
+include(":data")
+include(":app")

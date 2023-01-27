@@ -3,8 +3,12 @@
     <dimen name="small">6dp</dimen>
     <dimen name="medium">12dp</dimen>
     <dimen name="medium_big">16dp</dimen>
-    <dimen name="medium_large">16dp</dimen>
+    <dimen name="medium_large">20dp</dimen>
     <dimen name="regular">24dp</dimen>
     <dimen name="regular_big">36dp</dimen>
     <dimen name="large">48dp</dimen>
+
+    <dimen name="elevation_offset">4dp</dimen>
+
+    <dimen name="main_button_height">54dp</dimen>
 </resources>

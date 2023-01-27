@@ -1,8 +1,9 @@
-plugins {
+    plugins {
     id(Plugins.androidApplication)
     id(Plugins.kotlinAndroid)
     id(Plugins.kotlinKapt)
     id(Plugins.hiltAndroid)
+    id(Plugins.navigationSafeArgs)
 }
 
 android {
@@ -28,6 +29,7 @@ android {
             isDebuggable = true
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -35,15 +37,23 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
+    implementation(project(Projects.domain))
+    implementation(project(Projects.data))
 
     implementation(Libs.coreKtx)
     implementation(Libs.appCompat)
 
+    //Ktx extensions
+    implementation(Libs.fragmentKtx)
+
     // Kotlin
-    KotlinX.coroutines.android
     implementation(kotlin("bom"))
     implementation(kotlin(Libs.kotlinStdlib))
 
@@ -58,20 +68,35 @@ dependencies {
 
     // DI
     implementation(Libs.hiltAndroid)
+    implementation(Libs.hiltViewModel)
     kapt(Libs.hiltCompiler)
+    kapt(Libs.hiltViewModelCompiler)
 
-    //Arch components
+    // Arch components
     implementation(Libs.workRuntimeKtx)
-    implementation(Libs.kotlinxCoroutinesAndroid)
     implementation(Libs.lifecycleViewModelKtx)
-    implementation(Libs.lifecycleLivedataKtx)
     implementation(Libs.lifecycleViewModelSavedState)
-    implementation(Libs.roomRuntime)
-    kapt(Libs.roomCompiler)
 
+    // Navigation
+    implementation(Libs.navigationFragment)
+    implementation(Libs.navigationUi)
+
+    // Coroutines
+    implementation(Libs.kotlinxCoroutinesAndroid)
+    implementation(Libs.kotlinxCoroutinesCore)
+
+    // Glide
     implementation(Libs.glide)
     kapt(Libs.glideCompiler)
 
+    // Utils
+    implementation(Libs.timber)
+    implementation(Libs.logger)
+
     // Test
     testImplementation(Libs.junit)
+}
+
+hilt {
+    enableAggregatingTask = true
 }
